@@ -8,17 +8,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ 'home'|page }}">October Demo</a>
+            <a class="navbar-brand" href="{{ 'accueil'|page }}">Enseignement ESP</a>
         </div>
         <div class="collapse navbar-collapse navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li class="separator hidden-xs"></li>
                 <li class="{% if this.page.id == 'accueil' %}active{% endif %}"><a href="{{ 'accueil'|page }}">Accueil</a></li>
                 <li class="{% if this.page.id == 'protocoles' %}active{% endif %}"><a href="{{ 'protocoles'|page }}">Protocoles</a></li>
-                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Ressources humaines</a></li>
-                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Structures</a></li>
-                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Bases</a></li>
-                <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{ 'plugins'|page }}">Autres</a></li>
+                <li class="{% if this.page.id == 'ressources-humaines' %}active{% endif %}"><a href="{{ 'ressources-humaines'|page }}">Ressources humaines</a></li>
+                <li class="{% if this.page.id == 'structures' %}active{% endif %}"><a href="{{ 'structures'|page }}">Structures</a></li>
+                <li class="{% if this.page.id == 'bases' %}active{% endif %}"><a href="{{ 'bases'|page }}">Bases</a></li>
+                <li class="{% if this.page.id == 'fonctions-avancees' %}active{% endif %}"><a href="{{ 'fonctions-avancees'|page }}">Fonctions avancées</a></li>
+                <li class="{% if this.page.id == 'manipulations' %}active{% endif %}"><a href="{{ 'manipulations'|page }}">Manipulations</a></li>
             </ul>
         </div>
     </div>

@@ -12,110 +12,205 @@ is_hidden = 0
 <div class="container">
 
     <div class="page-header">
-        <h2>Overview <small>Basic concepts</small></h2>
+        <h2>Gestion de l'enseignement spécialisé <small>(ESP)</small></h2>
     </div>
     <p>
-        This page demonstrates the basic CMS features.
-        Usually each page built with October is a combination of a layout, page, partials and content blocks,
-        although in simple cases you can just use a page without anything else.
+        Le programme ESP est un outil informatique qui permet la gestion de l'enseignement spécialisé dans les <strong>écoles des degrés primaires et secondaires</strong> en Suisse. Il est basé sur le gestionnaire de contenu (CMS) OctoberCMS. En plus d'une interface d'utilisation facile et conviviale, le programme ESP permet la gestion de l'enseignement spécialisé par plusieurs utilisateurs et de manière décentralisée. <strong>En toute décontaction</strong>.
     </p>
 
-    <!-- Layouts -->
-    <h3>Layouts</h3>
+    <p>
+        <img src="{{ 'assets/images/presentation/pres_protocoles_1.png'|theme }}">
+    </p>
+
+    
+    <p>Les modules suivants sont proposés :</p>
+
+    <!-- Menu protocoles -->
     <p class="lead">
-        <i class="icon-th-large"></i> &nbsp; Layouts define the page scaffold.
+        <h3>Menu <strong>Protocoles</strong> :</h3>
     </p>
     <p>
-        The layout file <code>layouts/default.htm</code> defines the page scaffold &mdash;
-        everything that repeats on each page, such as the HTML, HEAD and BODY tags, StyleSheet and JavaScript references.
+        Le menu protocoles regroupe l'ensemble des <strong>fonctionnalités de base</strong> du programme ESP. Il s'agit en quelque sorte du menu de travail de l'outil ESP.
     </p>
-    <p>The page menu and footer in the Demo theme are defined in the layout as well.</p>
 
-    <hr />
-
-    <!-- Pages -->
-    <h3>Pages</h3>
-    <p class="lead">
-        <i class="icon-copy"></i> &nbsp; Pages hold the content for each URL.
-    </p>
     <p>
-        The page file <code>pages/home.htm</code> defines the page URL (<code>/</code> for this page) and the page content.
-        Pages are rendered inside layouts with this function that should be called in the layout code:
-    </p>
-    <pre>{{ "{% page %}" }}</pre>
-    <p>Using a layout for pages is optional &mdash; you can define everything right in the page file.</p>
-
-    <hr />
-
-    <!-- Partials -->
-    <h3>Partials</h3>
-    <p class="lead">
-        <i class="icon-tags"></i> &nbsp; Partials contain reusable chunks of HTML markup.
-    </p>
-    <p>
-        Partials are chunks of HTML defined in separate files that can be included anywhere.
-        Partials are rendered with:
-    </p>
-    <pre>{{ "{% partial \"partial-name\" %}" }}</pre>
-    <p>You may place partials inside folders too. In this example we placed the footer content to the <code>partials/site/footer.htm</code> partial.</p>
-    <pre>{{ "{% partial \"site/footer\" %}" }}</pre>
-    <p>Partials can be used inside pages, layouts or other partials.</p>
-
-    <hr />
-
-    <!-- Content blocks -->
-    <h3>Content blocks</h3>
-    <p class="lead">
-        <i class="icon-font"></i> &nbsp; Content blocks are text or HTML blocks that can be edited separately from the page or layout.
-    </p>
-    <p>
-        The introductory text used on this page is defined in the <code>content/welcome.htm</code> file.
-        Content blocks are defined and rendered with:
-        <pre>{{ "{% content \"content-name.htm\" %}" }}</pre>
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Module</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Suivi des élèves</span></th>
+              <td>Le module de base de l'ESP. Il regroupe le suivi des cas de l'enseigmenet spécialisé. Chaque suivi peut avoir plusieurs activités liées.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Activités</span></th>
+              <td>Les activités sont des éléments du suivi. Ils détaillent les mesures ou des actions qui sont effectuées pour un suivi donné.<br />Il est également possible d'y rattacher des tiers (thérapeutes, enseignants, proches).</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Pathologies</span></th>
+              <td>Un suivi peut avoir une à plusieurs pathologies. Les pathologies peuvent aussi être affectées aux élèves.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Statuts des suivis</span></th>
+              <td>Pour une meilleure vue d'ensemble, les suivis ont des étiquettes de statuts (en cours, en pause, terminé, etc...)</td>
+            </tr> 
+            <tr>
+              <th scope="row"><span class="text-uppercase">Types d'activités</span></th>
+              <td>Chaque activité peut se voir attribuer une étiquette de type d'activité (constat, bilan, entretien, etc...)</td>
+            </tr>     
+          </tbody>
+        </table>
     </p>
 
     <hr />
 
-    <!-- Placeholders -->
-    <h3>Placeholders</h3>
+    <!-- Menu Ressources humaines -->
     <p class="lead">
-        <i class="icon-bookmark"></i> &nbsp; Placeholders allow pages to inject content to a layout.
+        <h3>Menu <strong>Ressources humaines</strong> :</h3>
     </p>
     <p>
-        The common use is injecting page-specific links to StyleSheet or JavaScript files to the HEAD tag defined in the layout.
-        Placeholders are defined in the layout file and they have names so that they can be referred in the page.
-        Example:
+        Le menu ressources humaines contient l'ensemble des modules liés aux <strong>différents personnes</strong> qui interviennent sur les dossiers de l'enseignement spécialisé.
     </p>
-    <div class="row">
-        <div class="col-md-6">
-            <p>Layout file:</p>
-            <pre>{% content "placeholder/layout.txt" %}</pre>
-        </div>
-        <div class="col-md-6">
-            <p>Page file:</p>
-            <pre>{% content "placeholder/page.txt" %}</pre>
-        </div>
-    </div>
+
+    <p>
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Module</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Elèves</span></th>
+              <td>L'ensemble des élèves y sont regroupés. Il est possible d'associer les élèves à une école.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Interlocuteurs externes</span></th>
+              <td>Les interlocuteurs externes sont les thérapeutes.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Enseignants</span></th>
+              <td>L'ensemble des enseignants peut être saisi ici. Chaque enseignant est rattaché à une école.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Fonctions professionnelles</span></th>
+              <td>Les fonctions professionnelles des interlocuteurs externes sont notés dans cette liste.</td>
+            </tr> 
+            <tr>
+              <th scope="row"><span class="text-uppercase">Rôles des proches</span></th>
+              <td>Les proches des élèves peuvent avoir des rôles prédéfinis.</td>
+            </tr>     
+          </tbody>
+        </table>
+    </p>
 
     <hr />
 
-    <!-- Assets -->
-    <h3>Assets</h3>
-    <p class="lead">
-        <i class="icon-picture"></i> &nbsp; Assets are resource files like images and stylesheets.
-    </p>
-    <p>This theme stores its asset files (JavaScript, StyleSheet, images, fonts, etc) in the <code>themes/demo/assets</code> directory. This theme is also packaged with these useful 3rd party tools:</p>
-    <ul class="list-inline">
-        <li><a target="_blank" href="http://getbootstrap.com/">Twitter Bootstrap</a></li>
-        <li><a target="_blank" href="http://fontawesome.io/3.2.1/">Font Awesome</a></li>
-        <li><a target="_blank" href="http://www.google.com/fonts/specimen/Lato">Lato webfont</a></li>
-    </ul>
-    <p>You might prefer to remove them for your website implementation.</p>
 
-    <br />
+    <!-- Menu Structures -->
+    <p class="lead">
+        <h3>Menu <strong>Structures</strong> :</h3>
+    </p>
+    <p>
+        Le menu structures contient les données liées à la <strong>structures et à l'organisation</strong> de l'enseignement spécialisé.
+    </p>
+
+    <p>
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Module</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Ecole</span></th>
+              <td>Chaque école peut être rattachée à un cercle scolaire. Il est aussi possible d'y ajouter les directeurs.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Cercles scolaires</span></th>
+              <td>Les cercles scolaires contiennent les informations de base, telles que le responsable par défaut.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Année scolaires</span></th>
+              <td>Les années scolaires peuvent être rattachées à chaque élève. Il est possible de procéder à un bouclement automatique <span class="label label-primary">beta</span></td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Programmes</span></th>
+              <td>Les programmes scolaires contiennent les cycles et le type d'école.<br />
+              On peut aussi indiquer le programme suivant à prendre en compte lors du bouclement automatique <span class="label label-primary">beta</span></td>
+            </tr> 
+            <tr>
+              <th scope="row"><span class="text-uppercase">Volées</span></th>
+              <td>Chaque éleve est rattaché à une volée.</td>
+            </tr> 
+            <tr>
+              <th scope="row"><span class="text-uppercase">Types d'écoles</span></th>
+              <td>Les types d'écoles sont mentionnés ici (école primaire, secondaire, etc...)</td>
+            </tr>  
+            <tr>
+              <th scope="row"><span class="text-uppercase">Passages</span></th>
+              <td>Les différents passages d'une année à l'autre sont mentionnés ici. Utilisé lors du bouclement automatique des années <span class="label label-primary">beta</span></td>
+            </tr> 
+            <tr>            
+          </tbody>
+        </table>
+    </p>
+
+    <hr />
+
+
+    <!-- Menu Bases -->
+    <p class="lead">
+        <h3>Menu <strong>Bases</strong> :</h3>
+    </p>
+    <p>
+        Le menu bases contient les <strong>listes et données de base</strong> de l'outil ESP. Ces informations sont en principe moins souvent accédées.
+    </p>
+
+    <p>
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Module</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Pays</span></th>
+              <td>Les pays sont utilisés pour renseigner le pays d'origine d'un élève.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Langues</span></th>
+              <td>Les langues sont utilisées pour renseigner la langue de base d'un élève.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Type de permis</span></th>
+              <td>Types de permis de séjours ou d'établissement des élèves.</td>
+            </tr>
+            <tr>
+              <th scope="row"><span class="text-uppercase">Genres</span></th>
+              <td>Les genres sont le sexe de l'élève (homme, femme, autre)</td>
+            </tr> 
+              <th scope="row"><span class="text-uppercase">Types de faits</span></th>
+              <td>Pour chaque élève et enseignant, il est possible d'ajouter un événement/fait associé à un type spécifique (vacances, accident, début des rapports,...)</td>
+            </tr>  
+          </tbody>
+        </table>
+    </p>
+
+    <hr />
+
 
     <div class="text-center">
-        <p><a href="{{ 'ajax'|page }}" class="btn btn-lg btn-default">Continue to AJAX framework</a></p>
+        <p><a href="{{ 'protocoles'|page }}" class="btn btn-lg btn-default">Continuer avec le menu <strong>protocoles</strong></a></p>
     </div>
 
 </div>
