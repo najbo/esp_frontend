@@ -8,7 +8,7 @@ is_hidden = 0
         <div class="row">
             <div class="col-8">
                 <h1>Fonctions avancées</h1>
-                <p>L'outil ESP offre d'autres fonctions utiles, dont l'ajout des utilisateurs et les sauvegardes</p>
+                <p>L'outil ESP offre d'autres fonctions utiles, dont les sauvegardes, la gestion des utilisateurs et des permissions</p>
             </div>
         </div>
     </div>
@@ -16,9 +16,159 @@ is_hidden = 0
 
 <div class="container">
 
-    <div class="alert alert-success" role="alert"><strong>Oooooops !</strong> Page en cours de construction.</div>
+    <div class="page-header">
+        <h2>Menu <strong>Réglages</strong></h2>
+    </div>
+        <p>
+            Lorsqu'il est connecté au backend, un utilisateur disposant des permissions <strong>administrateur ESP</strong> peut accéder aux réglages avancés de l'outil ESP. Si ce menu n'est pas affiché, c'est que l'utilisateur ne dispose pas des permissions requis.
+        <p>
+            <img src="{{ 'assets/images/presentation/menu-reglages-1.png'|theme }}">
+        </p>
+
+        <p>
+            <img src="{{ 'assets/images/presentation/menu-reglages-2.png'|theme }}">
+        </p>
+
+        <p>
+            L'administrateur ESP peut gérer les fonctionnalités suivantes :
+            <ul>
+                <li><strong>Administrateurs :</strong> gestion des utilisateurs qui se connectent à l'ESP</li>
+                <li><strong>Backups :</strong> gère les sauvegardes des données (base de données et fichiers)</li>
+                <li><strong>Configuration des adresses e-mails :</strong> configure la passerelle d'envoi des e-mails</li>
+                <li><strong>Journaux des événements :</strong> affiche les journaux et permet de tracer certaines erreurs</li>
+                <li><strong>Journal des accès :</strong> permet de voir quel utilisateur s'est connecté à quel moment</li>
+            </ul>
+        <p>
+
+
+    <!-- Administrateurs -->
+    <h3>Administrateurs</h3>
+        <p class="lead">
+            Les administrateurs sont les <strong>utilisateurs</strong> du backend.
+        </p>
+
+        <p>
+            Ce menu permet de gérer, supprimer et ajouter les utilisateurs qui se connectent à l'outil ESP. Seul un <strong>super-user</strong> ou un <strong>administrateurs ESP</strong> peut accéder à cette fonctionnalité.
+        </p>
+        <p>
+            A noter qu'un <strong>administrateur ESP</strong> peut modifier les <strong>rôles ESP</strong> prédéfinis et les attribués aux utilisateurs. Il ne peut toutefois pas changer son propre rôle (il devra alors le demander au super-user). L'administateur ESP peut aussi ajouter des utilisateurs, exeptés les super-users bien entendus.
+        </p>
+    
+    <h4>C'est quoi un super-user ?</h4>
+
+        <p>
+            Un super-utilisateur est un utilisateur système qui dispose de <strong>toutes les permissions</strong> sur l'outil ESP et le framework OctoberCMS. En gros, c'est le chef des autres et il peut tout faire. C'est aussi lui qui peut modifier les rôles et les permissions des <strong>administrateurs ESP</strong>.
+        </p>
+        <p>
+            Les super-users ne sont pas visibles des autres utilisateurs.
+        <p>
+
+
+    <h4>Créer un administrateur</h4>
+        <p>
+           La création d'un administrateur permet de faire les choses suivantes :
+           <ul>
+                <li>Envoyer un e-mail d'accueil au nouvel utilisateur</li>
+                <li>Attribuer un rôle à l'utilisateur</li>
+                <li>Charger une image pour le profil de l'utilisateur (avatar)</li>
+                <li>Modifier plus finement les permissions spécifiques de l'utilisateur</li>
+            </ul>
+        </p>
+
+        <p>
+            <img src="{{ 'assets/images/presentation/menu-administrateurs-1.png'|theme }}">
+        </p>    
+
+        <p>
+            A noter que les <strong>groupes</strong> ne sont pas utilisés. Il permettent par exemple d'envoyer des e-mails à un groupe donné.
+        </p>
+
+    <h4>Modifier ou supprimer un administrateur</h4>
+        <p>
+            Il est possible de modifier les données des utilisateurs (y compris les rôles attribués à un utilisateur ainsi que les permissions spécifiques). Comme déjà dit plus haut, l'utilisateur actif ne peut modifier qu'un nombre limité de données sur son propre compte, comme ici :
+        <p>
+            <img src="{{ 'assets/images/presentation/menu-administrateurs-2.png'|theme }}">
+        </p>    
+
+
+    <div class="page-header">
+        <h2>Droits <strong>d'accès</strong></h2>
+    </div>
+
+    <h3>Rôles</h3>
+
+        <p>
+            Les rôles regroupent un ensemble de <strong>permissions</strong> pré-établies. Les rôles sont attribués directement aux utilisateurs. Il est possible de modifier plus finement les rôles pour un utilisteur donné (voir le chapitre des <code>permissions</code>). En revanche, seul le super-user peut créer un nouveau rôle, modifier ou supprimer un rôle.
+        </p>
+        <p>
+            A noter qu'un administrateur ESP ne pourra pas directement modifier ses propres rôles. Comme déjà indiqué, ce privilège est réservé au super-user.
+        </p>
+
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Rôle</th>
+              <th scope="col">Description</th>
+              <th scope="col">Protocoles</th>
+              <th scope="col" class="center">Ressources humaines</th>
+              <th scope="col" class="center">Structures</th>
+              <th scope="col" class="center">Bases</th>
+              <th scope="col" class="center">Réglages</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+                <th scope="row"><span class="text-uppercase">Administrateur ESP</span></th>
+                <td>Accès à l'ensemble des fonctionnalités de l'outil ESP</td>
+                <td class="center">oui</td>
+                <td class="center">oui</td>
+                <td class="center">oui</td>
+                <td class="center">oui</td>
+                <td class="center">oui</td>
+            </tr>
+            <tr>
+                <th scope="row"><span class="text-uppercase">Gestionnaire ESP</span></th>
+                <td>Peut tout faire sauf accéder aux réglages</td>
+                <td class="center">oui</td>
+                <td class="center">oui</td>
+                <td class="center">oui</td>
+                <td class="center">oui</td>
+                <td class="center"><strong>non</strong></td>
+            </tr>            
+            <tr>
+                <th scope="row"><span class="text-uppercase">Secrétaire ESP</span></th>
+                <td>Accède aux ressources humaines uniquement</td>
+                <td class="center"><strong>non</strong></td>
+                <td class="center">oui</td>
+                <td class="center"><strong>non</strong></td>
+                <td class="center"><strong>non</strong></td>
+                <td class="center"><strong>non</strong></td>
+            </tr>             
+          </tbody>
+        </table>
+    </p>
+
+    <h3>Permissions</h3>
+        <p>
+            Les permissions peuvent être modifiées plus finement par utilisateur. Par défaut, c'est la permission du rôle qui s'applique à l'utilisateur. Il est toufois possible de changer à sa guise les permissions par utilisateur. La permission sera alors soit :
+            <ul>
+                <li>autorisée</li>
+                <li>héritée du rôle</li>
+                <li>interdite</li>
+            </ul>
+        </p>
+
+        <p>
+            Les permissions écrasent donc en quelque sorte les permissions définies dans les rôles
+        </p>  
+
+        <p>
+            <img src="{{ 'assets/images/presentation/menu-roles-1.png'|theme }}">
+        </p>  
+
 
     <br />
+
 
     <div class="text-center">
         <p><a href="{{ 'manipulations'|page }}" class="btn btn-lg btn-default">Continuer avec le menu <strong>manipulations</strong></a></p>

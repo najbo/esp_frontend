@@ -3,3 +3,12 @@
   max-width: 100%;
   height: auto;
 }
+
+.container h4 {
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+.center {
+	text-align:center;
+}
