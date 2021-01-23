@@ -2,20 +2,31 @@ title = "Accueil"
 url = "/"
 layout = "default"
 is_hidden = 0
+
+==
+<?php
+
+function onStart()
+{
+
+    $this['app_name'] = getenv('APP_NAME');
+
+}
+?>
 ==
 <div class="jumbotron">
     <div class="container">
-        {% content "welcome.htm" %}
+        {% content "welcome.htm" app_name = app_name %}
     </div>
 </div>
 
 <div class="container">
 
     <div class="page-header">
-        <h2>Gestion de l'enseignement spécialisé <small>(ESP)</small></h2>
+        <h2>Introduction</h2>
     </div>
     <p>
-        Le programme ESP est un outil informatique qui permet la gestion de l'enseignement spécialisé dans les <strong>écoles des degrés primaires et secondaires</strong> en Suisse. Il est basé sur le gestionnaire de contenu (CMS) OctoberCMS. En plus d'une interface d'utilisation facile et conviviale, le programme ESP permet la gestion de l'enseignement spécialisé par plusieurs utilisateurs et de manière décentralisée. <strong>En toute décontaction</strong>.
+        Le portail OMPP est un outil informatique qui permet la gestion de l'enseignement spécialisé dans les <strong>écoles des degrés primaires et secondaires</strong> en Suisse. Il est basé sur le gestionnaire de contenu OctoberCMS. En plus d'une interface d'utilisation intuitive et conviviale, le programme OMPP permet la gestion de l'enseignement spécialisé par plusieurs utilisateurs et de manière décentralisée. <strong>En toute décontraction</strong>.
     </p>
 
     <p>
@@ -30,7 +41,7 @@ is_hidden = 0
         <h3>Menu <strong>Protocoles</strong> :</h3>
     </p>
     <p>
-        Le menu protocoles regroupe l'ensemble des <strong>fonctionnalités de base</strong> du programme ESP. Il s'agit en quelque sorte du menu de travail de l'outil ESP.
+        Le menu protocoles regroupe l'ensemble des <strong>fonctionnalités de base</strong> du portail OMPP. Il s'agit en quelque sorte du menu de travail de l'outil OMPP.
     </p>
 
     <p>
@@ -44,7 +55,7 @@ is_hidden = 0
           <tbody>
             <tr>
               <th scope="row"><span class="text-uppercase">Suivi des élèves</span></th>
-              <td>Le module de base de l'ESP. Il regroupe le suivi des cas de l'enseigmenet spécialisé. Chaque suivi peut avoir plusieurs activités liées.</td>
+              <td>Le module de base de l'OMPP. Il regroupe le suivi des cas de l'enseigmenet spécialisé. Chaque suivi peut avoir plusieurs activités liées.</td>
             </tr>
             <tr>
               <th scope="row"><span class="text-uppercase">Activités</span></th>
@@ -68,7 +79,7 @@ is_hidden = 0
             </tr> 
             <tr>
               <th scope="row"><span class="text-uppercase">Statistiques</span></th>
-              <td>Affiche quelques statistiques de base de l'outil ESP.</td>
+              <td>Affiche quelques statistiques de base de l'outil OMPP.</td>
             </tr>                   
           </tbody>
         </table>
